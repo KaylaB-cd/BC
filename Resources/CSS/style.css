@@ -1,0 +1,33 @@
+body {
+    font-family: "Karla";
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background-color: aliceblue;
+  }
+
+  h2 {
+    font-family: 'Abril Fatface', serif;
+    color: rgb(44, 8, 77);
+    font-size: 32px;
+    font-weight: bold;
+      }
+
+  button {
+    margin: 5px 0;
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border-color: rgb(44, 8, 77);
+    border-width: 2px;
+  }
+  .note {
+    font-size: 0.9em;
+    color: #555;
+  }
+  .link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }

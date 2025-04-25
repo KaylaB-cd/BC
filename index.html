@@ -3,29 +3,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>British Citizenship Checker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    button {
-      margin: 5px 0;
-      padding: 10px 15px;
-      display: block;
-      width: 100%;
-    }
-    .note {
-      font-size: 0.9em;
-      color: #555;
-    }
-    .link {
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="./Resources/CSS/style.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla:ital,wght@0,200..800;1,200..800&family=Rum+Raisin&family=Sigmar&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app">
@@ -43,7 +24,7 @@
         ]
       },
       notCovered: {
-        question: "This checker only covers people born in the UK after 1 January 1983.",
+        question: "If you were born in the UK before 1January 1983 you are a British Citizen unless your father was a diplomat or an enemy alien in occupation.",
         options: []
       },
       parentCitizen: {
