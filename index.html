@@ -13,7 +13,11 @@
     <h2>British Citizenship Checker</h2>
     <p id="question"></p>
     <div id="options"></div>
-    <p id="note" class="note"></p>
+      <p id="note" class="note"></p>
+    <div id="controls">
+      <button id="backButton" style="display:none;">Back</button>
+      <button id="startOverButton" style="display:none;">Start Over</button>
+    </div>
   </div> <script>
     const flow = {
       start: {
@@ -24,7 +28,7 @@
         ]
       },
       notCovered: {
-        question: "If you were born in the UK before 1January 1983 you are a British Citizen unless your father was a diplomat or an enemy alien in occupation.",
+        question: "This checker only covers people born in the UK after 1 January 1983.",
         options: []
       },
       parentCitizen: {
@@ -85,8 +89,14 @@
     };
 
     let currentStep = "start";
+    const history = [];
 
     function renderStep(stepKey) {
+      if (stepKey !== currentStep) {
+        history.push(currentStep);
+      }
+      currentStep = stepKey;
+
       const step = flow[stepKey];
       document.getElementById("question").innerHTML = step.question;
 
@@ -101,12 +111,26 @@
       });
 
       document.getElementById("note").textContent = step.note || "";
+      document.getElementById("backButton").style.display = history.length > 0 ? "block" : "none";
+      document.getElementById("startOverButton").style.display = currentStep !== "start" ? "block" : "none";
     }
 
     function showSettled() {
-      alert("'Settled' means having Indefinite Leave to Remain (ILR), Indefinite Leave to Enter (ILE), or the Right of Abode.");
+      alert("'Settled' means having Indefinite Leave to Remain (ILR), Indefinite Leave to Enter (ILE), Right of Abode or Permanent Residence.");
     }
+
+    document.getElementById("backButton").addEventListener("click", () => {
+      if (history.length > 0) {
+        const previousStep = history.pop();
+        renderStep(previousStep);
+      }
+    });
+
+    document.getElementById("startOverButton").addEventListener("click", () => {
+      history.length = 0;
+      renderStep("start");
+    });
 
     renderStep(currentStep);
   </script></body>
-</html>
+  </html>
