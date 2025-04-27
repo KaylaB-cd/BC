@@ -11,6 +11,16 @@ body {
     color: rgb(44, 8, 77);
     font-size: 32px;
     font-weight: bold;
+    text-align: center;
+      }
+  
+  h3 {
+    font-family: 'Abril Fatface', serif;
+    color: rgb(44, 8, 77);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 75px;
       }
 
   button {
@@ -71,4 +81,11 @@ body {
     text-align: center;
     background-color: darkgray;
     box-shadow: 0 8px 16px 0;
+  }
+
+  #question {
+    font-family: 'Abril Fatface', serif';
+    font-weight: bold;
+    font-size: 24px;
+
   }
